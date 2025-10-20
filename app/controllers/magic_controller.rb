@@ -1,5 +1,6 @@
 class MagicController < ApplicationController
   def new
+    @magic = nil
   end
 
   def create
@@ -36,5 +37,7 @@ class MagicController < ApplicationController
     rescue JSON::ParserError => e
       @error_message = "🧙‍♀️「私でも読めない魔法が⋯。もう一度お試しいただけますでしょうか。」#{e.message}"
     end
+
+    render :new, status: :ok
   end
 end
