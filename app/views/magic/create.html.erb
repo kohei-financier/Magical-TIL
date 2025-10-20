@@ -1,4 +1,23 @@
-<div>
-  <h1 class="font-bold text-4xl">Magic#create</h1>
-  <p>Find me in app/views/magic/create.html.erb</p>
+<div class="w-full max-w-2xl mx-auto space-y-8">
+  <div class="w-full max-w-2xl mx-auto mt-12 bg-parchment text-ancient-ink font-serif border-2 border-sepia-border rounded-lg shadow-inner-lg p-8 relative">
+    <div class="absolute top-4 right-4">
+      <svg class="w-8 h-8 text-sepia-border" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 6.253v11.494m-9-5.747h18" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+        <path d="M5.536 5.536L18.464 18.464M5.536 18.464L18.464 5.536" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+      </svg>
+    </div>
+    <div class="space-y-6">
+      <h2 class="text-sm uppercase tracking-widest text-ancient-ink/70">あなたは今日の学びが認められ、🧙魔法使いから新たな魔法🔮を授かりました</h2>
+        <div>
+          <h3 class="text-sm uppercase tracking-widest text-ancient-ink/70">🔮New Magic</h3>
+          <p class="text-2xl font-semibold italic"><%= @magic["newMagicName"] %></p>
+        </div>
+        <hr class="border-t border-sepia-border my-4"/>
+        <div>
+          <h3 class="text-sm uppercase tracking-widest text-ancient-ink/70">💭Comment</h3>
+          <p class="text-base italic leading-relaxed text-ancient-ink/90"><%= @magic["comments"] %></p>
+        </div>
+    </div>
+  </div>
 </div>
+
