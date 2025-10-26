@@ -1,8 +1,9 @@
 <div class="w-full max-w-2xl mx-auto space-y-8">
   <div class="text-center">
-    <h1 class="mb-4 text-3xl font-bold tracking-tight text-black dark:text-white sm:text-4xl">Magical TIL</h1>
-    <p class="mt-3 text-base text-black/60 dark:text-white/60">あなたが今日学んだ内容（Today I Learned 略称:TIL）を</p>
-    <p class="mt-1 text-base text-black/60 dark:text-white/60">魔法使い🧙に報告し、新たな魔法🔮を授かります。</p>
+    <h1 class="mb-4 text-5xl font-bold tracking-tight text-purple-600 dark:text-white sm:text-5xl">Magical TIL</h1>
+    <h3 class="mb-8 text-lg italic font-bold tracking-tight text-purple-600 dark:text-white sm:text-lg">「今日の学び」を「新しい魔法」を覚える楽しみに。</h3>
+    <p class="mt-3 text-base text-black/60 dark:text-white/60">あなたが今日学んだ内容（Today I Learned 略称:TIL）を下記に書き込んで</p>
+    <p class="mt-1 text-base text-black/60 dark:text-white/60">魔法使い🧙に報告することで、新たな魔法🔮を授かります。</p>
   </div>
 
   <%= turbo_frame_tag "magic_form" do %>
@@ -35,7 +36,7 @@
     <% if @magic %>
 
       <div class="w-full max-w-2xl mx-auto space-y-8" data-controller="clipboard">
-        <div class="w-full max-w-2xl mx-auto mt-12 bg-parchment text-ancient-ink font-serif border-2 border-sepia-border rounded-lg shadow-inner-lg p-8 relative">
+        <div class="w-full max-w-2xl mx-auto mt-12 bg-[#fdf6e3] text-[#4a4033] font-serif border-2 border-[#5a5245] rounded-lg shadow-inner-lg p-8 relative">
           <div class="absolute top-4 right-4">
             <button data-action="click->clipboard#copy" class="p-2 rounded-full hover:bg-sepia-border/20 transition-colors duration-200" title="内容をコピー">
               <span class="material-symbols-outlined text-ancient-ink/80">content_copy</span>
@@ -48,7 +49,7 @@
                 <h3 class="text-sm uppercase tracking-widest text-ancient-ink/70">🔮New Magic</h3>
                 <p class="mt-1 text-2xl font-semibold italic"><%= @magic["newMagicName"] %></p>
               </div>
-              <hr class="border-t border-sepia-border my-4"/>
+              <hr class="border-t border-[#d1c7b8] my-4"/>
               <div>
                 <h3 class="text-sm uppercase tracking-widest text-ancient-ink/70">💭Comment</h3>
                 <p class="mt-1 text-base italic leading-relaxed text-ancient-ink/90"><%= @magic["comments"] %></p>
@@ -56,6 +57,12 @@
             </div>
           </div>
         </div>
+        <%= link_to "https://twitter.com/share?text=【🧙今日のTILから授かった新たな魔法🔮】%0a『#{@magic["newMagicName"]}』%0a%0a%0ashared by Magical TIL%0a「今日の学び」を「新しい魔法」を覚える楽しみに。%0a", target: "_blank", data: { toggle: "tooltip", placement: "bottom" }, class: "flex min-w-[120px] items-center justify-center rounded-lg h-12 px-6 bg-black text-white text-base font-bold leading-normal tracking-wide shadow-lg shadow-primary/20 hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary focus:ring-offset-background-light dark:focus:ring-offset-background-dark transition-all duration-200" do %>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter-x" viewBox="0 0 16 16">
+            <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/>
+          </svg>
+          でシェアする！
+        <% end %>
       </div>
 
     <% end %>
