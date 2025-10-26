@@ -3,12 +3,8 @@ module ApplicationHelper
     {
       site: "Magical TIL",
       title: "「今日の学び」を「新しい魔法」を覚える楽しみに。",
-      description: "「今日の学び（TIL）」を分析して、新しい魔法を授けるサービスです",
-      reverse: true,
+      description: "TILを分析して、新しい魔法を授ける",
       charset: "utf-8",
-      keywords: "rails,TIL,魔法",
-      canonical: "https://magical-til.onrender.com/",
-      separator: "|",
       og: {
         site_name: :site,
         title: :title,
